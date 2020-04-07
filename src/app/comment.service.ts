@@ -8,13 +8,12 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CommentService {
-  http:HttpClient;
-  url: 'https://jsonplaceholder.typicode.com/posts';
+  _url = 'https://jsonplaceholder.typicode.com/posts';
 
-  constructor(http:HttpClient) { }
+  constructor(private http:HttpClient) { }
 
   getComments():Observable<Comment[]>{
-    return this.http.get<Comment[]>(this.url);
+    return this.http.get<Comment[]>(this._url);
   }
 
 }

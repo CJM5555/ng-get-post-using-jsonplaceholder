@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comment.component.css']
 })
 export class CommentComponent implements OnInit {
-  cs:CommentService;
   c:Comment[];
-  constructor(cs: CommentService) { }
+
+  constructor(private cs: CommentService) { }
 
   ngOnInit(): void {
     this.getComment();
