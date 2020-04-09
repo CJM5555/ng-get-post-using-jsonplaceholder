@@ -1,0 +1,16 @@
+#blockOfPosts{
+    min-height: 560px;
+    height: 80%;
+    overflow-y: scroll;
+}
+
+#aPost{
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+#aPost h5{
+    padding: 0;
+}

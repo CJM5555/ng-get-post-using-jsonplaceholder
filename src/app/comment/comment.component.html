@@ -1,8 +1,16 @@
-<h1>It works</h1>
 
-<div *ngFor="let comment of c">
-<h5>Comment No. {{comment.id}}</h5>
-<h5>User ID {{comment.userId}}</h5>
-<h5>Title {{comment.title}}</h5>
-<h5>Body {{comment.body}}</h5>
+<h4>This is the comment sections</h4>
+
+<div id="blockOfComments">
+    <div *ngFor="let comment of c" id="commentLine">
+        <h5>User Name: {{comment.name}}</h5>
+        <h5>User Id: {{comment.id}}</h5>
+        <h5>Email: {{comment.email}}</h5>
+        <h5>Body: {{comment.body}}</h5>
+    </div>
+</div>
+
+<div id="inputComment">
+    <input ref-textField type="text" placeholder="Add comment..." (keyup.enter)="postComment(textField.value)"/>
+    <button (click)="postComment(textField.value)">Send</button>
 </div>

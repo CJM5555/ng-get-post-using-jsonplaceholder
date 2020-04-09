@@ -1,0 +1,12 @@
+<h4>This is the list of posts</h4>
+
+<div id="blockOfPosts">
+    <div *ngFor="let post of posts" id="aPost">
+        <a (click)="selectPost(post.id)" [routerLink]="['/post', post.id]">
+            <h5>Post Id: {{post.id}}</h5> 
+            <h5>User Id: {{post.userId}}</h5>
+            <h5>Title: {{post.title}}</h5>
+            <h5>Body: {{post.body}}</h5>
+        </a>
+    </div>
+</div>

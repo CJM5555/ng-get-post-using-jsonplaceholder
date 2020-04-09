@@ -1,0 +1,27 @@
+body{
+    background-color: #eaf4ff;
+}
+
+nav{
+    background-color: #8dbdff;
+    overflow: hidden;
+    position: relative;
+    width:100%;
+    min-height:50px;
+}
+
+main{
+    background-color: #eaf4ff;
+    min-height: 60%;
+    width: 60%;
+    float: left;
+    height: 600px;
+}
+
+aside{
+    background-color: #add6ff;
+    width: 40%;
+    float: left;
+    height: 600px;
+}
+

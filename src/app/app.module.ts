@@ -5,11 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommentComponent } from './comment/comment.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { PostComponent } from './post/post.component';
+import { UserComponent } from './user/user.component';
+import { LogActionComponent } from './log-action/log-action.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CommentComponent
+    CommentComponent,
+    NavigationBarComponent,
+    PostComponent,
+    UserComponent,
+    LogActionComponent
   ],
   imports: [
     BrowserModule,
