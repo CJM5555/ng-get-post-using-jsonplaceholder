@@ -20,7 +20,7 @@ export class CommentService {
       tap(_ => this.logService.log("Comments fetched")));
   }
 
-  postComment(comment:Comment, postId : String):void{
+  postComment(comment:Comment, postId : string):void{
     this.http.post<Comment>(this._baseUrl + postId + "/comments",comment).pipe(
       catchError(this.handleError<Comment[]>('postComment',[])),
       tap(_ => this.logService.log("Comment posted")));

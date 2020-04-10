@@ -3,7 +3,6 @@ import { Comment } from '../data-interfaces/comment';
 import { CommentService } from './../comment.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router'
-import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-comment',
@@ -12,7 +11,7 @@ import { switchMap } from 'rxjs/operators';
 })
 export class CommentComponent implements OnInit {
   c:Comment[];
-  postId:String;
+  postId:string;
   constructor(private route: ActivatedRoute, private router: Router, private cs: CommentService, private logService:LogActionService) { }
 
   ngOnInit(): void {
@@ -22,13 +21,13 @@ export class CommentComponent implements OnInit {
     });
   }
 
-  getComment(postId:String): void{
+  getComment(postId:string): void{
     this.cs.getComments(postId).subscribe(data => this.c = data);
   }
 
   postComment(text:String):void{
-    let input = { postId : 1, id : 2, name : "Test", email : "aaa", body : text}; //Really HARD code here :P
-    this.cs.postComment(input,"2");
+    let input = { postId : parseInt(this.postId), id : 2, name : "Jia Min", email : "jiamin55555@live.com", body : text}; //Really HARD code here :P
+    this.cs.postComment(input,this.postId);
     this.c.push(input);
   }
 }
