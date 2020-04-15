@@ -1,9 +1,19 @@
+
+#header{
+    height: 10%;
+}
+
+
 #blockOfPosts{
-    min-height: 560px;
-    height: 80%;
+    height: 90%;
     overflow-y: scroll;
 }
 
+mat-expansion-panel{
+    margin: 20px;
+}
+
+/*
 #aPost{
     margin: 20px;
     padding: 20px;
@@ -23,3 +33,4 @@
     color:black;
     text-decoration: none;
 }
+*/

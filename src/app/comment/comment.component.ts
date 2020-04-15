@@ -1,6 +1,6 @@
 import { LogActionService } from './../log-action.service';
 import { Comment } from '../data-interfaces/comment';
-import { CommentService } from './../comment.service';
+import { FetchDataService } from '../fetch-data.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 
@@ -11,18 +11,24 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 })
 export class CommentComponent implements OnInit {
   c:Comment[];
-  postId:string;
-  constructor(private route: ActivatedRoute, private router: Router, private cs: CommentService, private logService:LogActionService) { }
+  postId:string = "1";
+  fetchedComments:Boolean;
+
+  constructor(private route: ActivatedRoute, private router: Router, private cs: FetchDataService, private logService:LogActionService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => { 
-      this.postId = params.get('id'),
+      if (params.get('id') != null) this.postId = params.get('id'),
       this.getComment(this.postId); 
     });
   }
 
   getComment(postId:string): void{
-    this.cs.getComments(postId).subscribe(data => this.c = data);
+    this.fetchedComments = false;
+    this.cs.getComments(postId).subscribe(
+      data => this.c = data,
+      error => this.logService.log("Failed to get comment"),
+      () => this.fetchedComments = true);
   }
 
   postComment(text:String):void{

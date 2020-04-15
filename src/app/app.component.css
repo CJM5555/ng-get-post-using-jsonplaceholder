@@ -2,26 +2,19 @@ body{
     background-color: #eaf4ff;
 }
 
-nav{
-    background-color: #8dbdff;
-    overflow: hidden;
-    position: relative;
-    width:100%;
-    min-height:50px;
+.nav-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 
-main{
-    background-color: #eaf4ff;
-    min-height: 60%;
-    width: 60%;
-    float: left;
-    height: 600px;
+mat-toolbar{
+    height: 10%;
+    background-color: #673ab7;
 }
 
-aside{
-    background-color: #add6ff;
-    width: 40%;
-    float: left;
-    height: 600px;
+mat-sidenav{
+    width: 400px;
 }
-

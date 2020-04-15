@@ -1,14 +1,38 @@
-<nav>
-    <app-navigation-bar></app-navigation-bar>
-</nav>
+<mat-sidenav-container class="nav-container">
+    <mat-sidenav #sidenav mode="auto" autoFocus="false">
+        <mat-toolbar color="primary">
+            <h4 style="padding: 0;">Navigation Menu</h4>
+        </mat-toolbar>
 
-<main>
-    <app-post></app-post>
-</main>
+        <mat-nav-list>
+            <mat-list-item routerLink="posts" (click)="setHeader(1)">
+                <a matLine>Posts</a>
+             </mat-list-item>
+             <mat-list-item  routerLink="albums" (click)="setHeader(2)">
+                <a matLine>Albums</a>
+             </mat-list-item>
+             <mat-list-item  routerLink="analytics" (click)="setHeader(3)">
+                <a matLine>User Analytics</a>
+             </mat-list-item>
+        </mat-nav-list>
+  
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
 
-<aside>
-    <router-outlet></router-outlet>
-    <app-user></app-user>
-</aside>
+        <mat-toolbar color="primary">
+            <button mat-flat-button (click)="sidenav.toggle()" color="primary">
+                <mat-icon>dehaze</mat-icon>
+            </button>
+            
+            <h4>{{headerTitle}}</h4>
 
-<app-log-action></app-log-action>
+            <button mat-flat-button color="primary" style="position: absolute; left: 1140px;">CJM5555</button>
+        </mat-toolbar>
+        
+        <router-outlet></router-outlet>
+
+        <app-log-action></app-log-action>    
+
+        </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,10 @@
+main{
+    height: 90%;
+    background-color: #eaf4ff;
+    overflow-y: auto;
+}
+
+mat-card{
+    height: 80%;
+    width: 80%;
+}

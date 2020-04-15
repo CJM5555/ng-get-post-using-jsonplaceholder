@@ -1,11 +1,19 @@
 #blockOfComments{
-    min-height: 260px;
-    height: 60%;
+    height: 80%;
     overflow-y: scroll;
+    background-color: #DDE7FF;
+}
+
+#header{
+    height: 10%;
+    background-color: #DDE7FF;
 }
 
 #commentLine{
     margin: 20px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
 }
 
 #commentLine h5{
@@ -13,6 +21,7 @@
 }
 
 #inputComment{
-    min-height: 40px;
-    margin-left: 30px;
+    height: 10%;
+    background-color: #DDE7FF;
 }
+

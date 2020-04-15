@@ -1,7 +1,10 @@
-
-<h4>This is the comment sections</h4>
+<div id="header">
+    <h4>This is the comment sections</h4>
+    <mat-progress-bar color="primary" mode="indeterminate" *ngIf="fetchedComments === false"></mat-progress-bar>
+</div>
 
 <div id="blockOfComments">
+
     <div *ngFor="let comment of c" id="commentLine">
         <h5>User Name: {{comment.name}}</h5>
         <h5>User Id: {{comment.id}}</h5>
@@ -11,6 +14,12 @@
 </div>
 
 <div id="inputComment">
-    <input ref-textField type="text" placeholder="Add comment..." (keyup.enter)="postComment(textField.value)"/>
-    <button (click)="postComment(textField.value)">Send</button>
+    <span color="white" style="font-size: 12px; margin-left: 30px;">
+        <mat-form-field appearance="outline" color="primary" style="margin: 0; width: 380px;">
+        <mat-label>Comment</mat-label>
+        <input matInput ref-textField type="text" placeholder="Add comment..." (keyup.enter)="postComment(textField.value)"/>
+        </mat-form-field>
+    </span>
+
+    <button mat-raised-button color="primary" (click)="postComment(textField.value)" style="float: right; margin-top: 8px;">Send</button>
 </div>

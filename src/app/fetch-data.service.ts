@@ -1,3 +1,4 @@
+import { Comment } from './data-interfaces/comment';
 import { Post } from './data-interfaces/post';
 import { LogActionService } from './log-action.service';
 import { Injectable } from '@angular/core';
@@ -8,16 +9,29 @@ import { catchError, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class PostService {
+export class FetchDataService {
 
-  _url = 'https://jsonplaceholder.typicode.com/posts';
+  postsUrl = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(private http:HttpClient, private logService:LogActionService) { }
 
   getPosts():Observable<Post[]>{
-    return this.http.get<Post[]>(this._url).pipe(
+    return this.http.get<Post[]>(this.postsUrl).pipe(
       catchError(this.handleError<Post[]>('getPost',[])),
-      tap(_ => this.logService.log("Posts fetched")));
+      tap(complete => this.logService.log("Posts fetched")));
+  }
+
+  getComments(postId : String):Observable<Comment[]>{
+    this.logService.log("Fetching comments for postId " + postId + " from " + this.postsUrl + "/" + postId + "/comments");
+    return this.http.get<Comment[]>(this.postsUrl + "/" + postId + "/comments").pipe(
+      catchError(this.handleError<Comment[]>('getComment',[])),
+      tap(_ => this.logService.log("Comments fetched")));
+  }
+
+  postComment(comment:Comment, postId : string):void{
+    this.http.post<Comment>(this.postsUrl + postId + "/comments",comment).pipe(
+      catchError(this.handleError<Comment[]>('postComment',[])),
+      tap(_ => this.logService.log("Comment posted")));
   }
 
   handleError<T>(operation = 'operation', result?: T) {

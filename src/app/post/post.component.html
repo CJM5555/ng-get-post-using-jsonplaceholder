@@ -1,12 +1,26 @@
-<h4>This is the list of posts</h4>
+<div id="header">
+    <h4>This is the list of posts</h4>
+</div>
 
 <div id="blockOfPosts">
     <div *ngFor="let post of posts" id="aPost">
-        <a (click)="selectPost(post.id)" [routerLink]="['/post', post.id]">
-            <h5>Post Id: {{post.id}}</h5> 
-            <h5>User Id: {{post.userId}}</h5>
-            <h5>Title: {{post.title}}</h5>
+
+        <mat-expansion-panel [expanded]="true">
+
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Post #{{post.id}}
+              </mat-panel-title>
+              <mat-panel-description>
+                {{post.title}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
             <h5>Body: {{post.body}}</h5>
-        </a>
+            <span style="float: right;">User Id: {{post.userId}}</span>
+            <button mat-button (click)="selectPost(post.id)" color="primary">Comment</button>
+
+          </mat-expansion-panel>
+        
     </div>
 </div>

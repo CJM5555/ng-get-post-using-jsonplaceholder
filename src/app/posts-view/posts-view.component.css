@@ -1,0 +1,15 @@
+
+main{
+    background-color: #eaf4ff;
+    height: 90%;
+    width: 60%;
+    float: left;
+}
+
+aside{
+    background-color: #add6ff;
+    width: 40%;
+    float: left;
+    height: 90%;
+}
+

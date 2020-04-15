@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavigationBarComponent } from './navigation-bar.component';
+import { AnalyticsViewComponent } from './analytics-view.component';
 
-describe('NavigationBarComponent', () => {
-  let component: NavigationBarComponent;
-  let fixture: ComponentFixture<NavigationBarComponent>;
+describe('AnalyticsViewComponent', () => {
+  let component: AnalyticsViewComponent;
+  let fixture: ComponentFixture<AnalyticsViewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavigationBarComponent ]
+      declarations: [ AnalyticsViewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavigationBarComponent);
+    fixture = TestBed.createComponent(AnalyticsViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

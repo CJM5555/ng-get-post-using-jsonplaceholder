@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'get-post-using-jsonplaceholder';
+  title = 'An Angular Project by CJM';
+  headerTitle:string = 'Posts';
+
+  public setHeader(choice: Number): void{
+    switch(choice){
+      case 1:this.headerTitle = "Posts"; break;
+      case 2:this.headerTitle = "Albums"; break;
+      case 3:this.headerTitle = "User Analytics"; break;
+      default: console.log("What have u clicked?!");
+    }
+  }
 }
+
+
