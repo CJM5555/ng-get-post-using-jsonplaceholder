@@ -3,11 +3,11 @@
         <mat-grid-tile *ngFor="let album of albums">
             <mat-card>
                 <mat-card-header>
-                    <p> This is a placeholder for header</p>
+                    <p>{{album.title}}</p>
                 </mat-card-header>
                 <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
                 <mat-card-content>
-                    <p>This is a placeholder for content</p>
+                    <p>This album uploaded by user #{{album.userId}}</p>
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-button color="primary">View More</button>

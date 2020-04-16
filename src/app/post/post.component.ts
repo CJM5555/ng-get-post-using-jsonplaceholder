@@ -19,6 +19,6 @@ export class PostComponent implements OnInit {
 
   selectPost(id:String): void{
     this.logService.log("Post with id " + id + " selected");
-    this.fetchService.getComments(id);
+    //this.fetchService.getComments(id);  //comments component already subscribe with the service
   }
 }

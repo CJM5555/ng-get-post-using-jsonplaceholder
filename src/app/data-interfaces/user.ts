@@ -3,7 +3,10 @@ export interface User{
     name:String;
     username:String;
     email:String;
-    address:Address;
+    //address:Address;
+    //phone:String;
+    //website:String;
+    //company:Company;
 }
 
 interface Address{
@@ -17,4 +20,10 @@ interface Address{
 interface GeometricLocation{
     lat:String;
     lng:String;
+}
+
+interface Company{
+    name:String;
+    catchPhrase:String;
+    bs:String;
 }

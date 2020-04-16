@@ -11,6 +11,7 @@ import { AnalyticsViewComponent } from './analytics-view/analytics-view.componen
 const routes: Routes = [
   { path: "", component: PostsViewComponent},
   { path: "posts", component: PostsViewComponent},
+  { path: "posts/:id", component: PostsViewComponent},
   { path: "albums", component: AlbumsViewComponent},
   { path: "analytics", component: AnalyticsViewComponent}
 ];

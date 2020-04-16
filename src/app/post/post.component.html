@@ -18,7 +18,7 @@
 
             <h5>Body: {{post.body}}</h5>
             <span style="float: right;">User Id: {{post.userId}}</span>
-            <button mat-button (click)="selectPost(post.id)" color="primary">Comment</button>
+            <button mat-button (click)="selectPost(post.id)" [routerLink]="['/posts',post.id]" color="primary">Comment</button>
 
           </mat-expansion-panel>
         
