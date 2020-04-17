@@ -14,14 +14,17 @@ export class AnalyticsViewComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'username', 'email'];
   source:User[];
   dataSource;
+  fetchingUsers:Boolean;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(private service:FetchDataService,private logService:LogActionService) { }
 
   ngOnInit(): void {
+    this.fetchingUsers = true
     this.service.getUsers().subscribe(data => this.source = data,
       error => this.logService.log("Failed to get users"),
-      () => this.dataSource = new MatTableDataSource(this.source)
+      () => {this.dataSource = new MatTableDataSource(this.source),
+              this.fetchingUsers = false}
       );
 
     this.dataSource.sort = this.sort;

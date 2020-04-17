@@ -1,6 +1,7 @@
 <main>
-    <table mat-table [dataSource]="dataSource" matSort>
+    <mat-spinner *ngIf="fetchingUsers === true"></mat-spinner>
 
+    <table mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
             <td mat-cell *matCellDef="let element">{{element.id}}</td>

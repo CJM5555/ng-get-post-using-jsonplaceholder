@@ -10,15 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./albums-view.component.css']
 })
 export class AlbumsViewComponent implements OnInit {
-
+  fetchingAlbums:Boolean;
   albums:Album[];
 
   constructor(private service:FetchDataService, private logService:LogActionService) { }
 
   ngOnInit(): void {
+    this.fetchingAlbums = true;
     this.service.getAlbums().subscribe(data => this.albums = data,
       error => this.logService.log("Failed to fetch albums"),
-      //() => this.logService.log("Fetched albums")
+      () => this.fetchingAlbums = false
     ) 
   }
 

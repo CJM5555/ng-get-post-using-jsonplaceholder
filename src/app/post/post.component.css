@@ -13,6 +13,12 @@ mat-expansion-panel{
     margin: 20px;
 }
 
+mat-spinner{
+    position: absolute;
+    left: 25%;
+    top: 40%;
+}
+
 /*
 #aPost{
     margin: 20px;

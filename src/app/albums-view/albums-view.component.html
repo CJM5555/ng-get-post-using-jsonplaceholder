@@ -1,4 +1,5 @@
 <main>
+    <mat-spinner *ngIf="fetchingAlbums === true"></mat-spinner>
     <mat-grid-list cols="3" rowHeight="560px" gutterSize="5px">
         <mat-grid-tile *ngFor="let album of albums">
             <mat-card>

@@ -8,3 +8,9 @@ mat-card{
     height: 80%;
     width: 80%;
 }
+
+mat-spinner{
+    position: absolute;
+    left: 45%;
+    top: 40%;
+}

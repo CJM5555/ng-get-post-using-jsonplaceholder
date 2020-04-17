@@ -9,12 +9,13 @@ import { FetchDataService } from '../fetch-data.service';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-
+  fetchingPosts:Boolean;
   posts: Post[];
   constructor(private fetchService:FetchDataService, private logService:LogActionService) { }
 
   ngOnInit(): void {
-    this.fetchService.getPosts().subscribe(data => this.posts = data);
+    this.fetchingPosts = true;
+    this.fetchService.getPosts().subscribe(data => this.posts = data,null,() => this.fetchingPosts = false);
   }
 
   selectPost(id:String): void{

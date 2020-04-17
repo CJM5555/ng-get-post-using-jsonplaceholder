@@ -1,11 +1,19 @@
 <div id="header">
-    <h4>This is the list of posts</h4>
+    <h4>This is the list of posts    
+      <span color="accent" style="font-size:xx-small">
+       Limit posts:
+       <mat-slider #slider min="10" max="100" step="1" value="20"></mat-slider>
+       {{slider.value}}
+      </span>
+    </h4>
 </div>
 
 <div id="blockOfPosts">
-    <div *ngFor="let post of posts" id="aPost">
 
-        <mat-expansion-panel [expanded]="true">
+  <mat-spinner *ngIf="fetchingPosts === true"></mat-spinner>
+    <div *ngFor="let post of posts; let i=index" id="aPost">
+
+        <mat-expansion-panel *ngIf="i<slider.value" [expanded]="true">
 
             <mat-expansion-panel-header>
               <mat-panel-title>

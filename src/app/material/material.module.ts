@@ -12,21 +12,25 @@ import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 const MaterialComponents = [
   MatSidenavModule,
   MatButtonModule,
   MatTableModule,
-  MatPaginatorModule,
+  MatPaginatorModule, //
   MatDialogModule,
   MatProgressBarModule,
   MatCardModule,
   MatExpansionModule,
   MatToolbarModule,
   MatInputModule,
-  MatListModule,
+  MatListModule, //
   MatGridListModule,
-  MatIconModule
+  MatIconModule,
+  MatSliderModule,
+  MatProgressSpinnerModule
 ]
 
 @NgModule({

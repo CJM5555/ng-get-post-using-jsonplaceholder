@@ -23,7 +23,7 @@ import { AnalyticsViewComponent } from './analytics-view/analytics-view.componen
     LogActionComponent,
     PostsViewComponent,
     AlbumsViewComponent,
-    AnalyticsViewComponent
+    AnalyticsViewComponent,
   ],
   imports: [
     BrowserModule,
